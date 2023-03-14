@@ -2,9 +2,10 @@ body {
     width: 100%;
     height: 100%;
     overflow-x: hidden;
+    background-color: rgb(37, 49, 60);
 }
 
-div {
+header {
     width: 100%;
     height: 100vh;
     display: flex;
@@ -35,4 +36,29 @@ h1 {
     background-image: url("../assets/noise.png");
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
+}
+
+/* GALERRY SECTION */
+
+.gallery {
+    display: grid;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: white;
+    padding: 3px;
+    gap: 3px;
+}
+
+.card {
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    /* margin: 0 auto; */
+    /* border: 3px solid white; */
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
