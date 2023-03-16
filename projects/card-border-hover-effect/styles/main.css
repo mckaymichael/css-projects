@@ -1,0 +1,86 @@
+:root {
+    --card-color: rgb(23, 23, 23);
+}
+
+body {
+    background-color: rgb(20, 20, 20);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+#gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    max-width: 922px;
+    width: calc(100%-20px);
+    justify-content: center;
+}
+
+#gallery:hover .card .card-border {
+    opacity: 1;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    cursor: pointer;
+    width: 300px;
+    height: 260px;
+    position: relative;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card::before,
+.card .card-border {
+    border-radius: inherit;
+    content: "";
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.33s;
+}
+
+.card::before {
+    background: radial-gradient(
+        800px circle at var(--mouse-x) var(--mouse-y),
+        rgba(255, 255, 255, 0.06),
+        transparent 40%
+    );
+    z-index: 3;
+}
+
+.card .card-border {
+    background: radial-gradient(
+        800px circle at var(--mouse-x) var(--mouse-y),
+        rgba(255, 255, 255, 0.3),
+        transparent 40%
+    );
+    z-index: 1;
+}
+
+.card .card-container {
+    background-color: var(--card-color);
+    height: calc(100% - 2px);
+    width: calc(100% - 2px);
+    border-radius: inherit;
+    margin: 1px;
+    position: relative;
+    z-index: 2;
+}
+
+.card .card-container a {
+    background-image: url(../../../assets/noise.png);
+    /* opacity: 0.2; */
+}
